@@ -1,0 +1,51 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  name: String!
+  age: Int!
+  password: String!
+  email: String!
+}
+
+type UserG {
+  customId: Int!
+  name: String
+  age: Int!
+  email: String!
+  password: String!
+}
+
+type Query {
+  getAllUsers: [User!]!
+  getallusersg: [UserG!]!
+  userG(id: Int!): UserG!
+}
+
+type Mutation {
+  createUser(userDto: CreateUserDto!): User!
+  createUserG(createUserGInput: CreateUserGInput!): UserG!
+  updateUserG(updateUserGInput: CreateUserGInput!): UserG!
+  removeUserG(id: Int!): UserG!
+  login(email: String!, password: String!): String!
+}
+
+input CreateUserDto {
+  name: String!
+  age: Int!
+  email: String!
+  password: String!
+}
+
+input CreateUserGInput {
+  id: Float
+  name: String!
+  age: Int!
+  email: String!
+  password: String!
+}
+
+type Subscription {
+  onUserCreated: UserG!
+}
